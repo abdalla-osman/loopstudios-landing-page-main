@@ -1,0 +1,79 @@
+.leader{
+    padding:50px 0;
+    .container{
+        display: block;
+    }
+    & .section-box{
+        background-image: url(../images/desktop/image-interactive.jpg);
+        background-size: cover;
+        height: 500px;
+        width:700px;
+        position: relative;
+        @include breakPoint(mobile){
+            background-image: url(../images/mobile/image-interactive.jpg);
+            height:500px;
+            width: 100%;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        @include breakPoint(large){
+            height:400px;
+            width:600px;
+        }
+        @include breakPoint(medium){
+            width: 100%;
+        }
+        @include breakPoint(small){
+            width: 100%;
+        }
+        .boxleader{
+            padding:50px;
+            padding-bottom: 0;
+            background-color: $White;
+            position: absolute;
+            bottom:0%;
+            width:600px;
+            height: 300px;
+            right: -500px;
+            @include breakPoint(medium){
+                width:100%;
+                right: 0;
+                bottom: -150px;
+            }
+            @include breakPoint(mobile){
+                padding:20px;
+                width:100%;
+                right: 0;
+                bottom:0px;
+                text-align: center;
+            }
+            @include breakPoint(small){
+                width:100%;
+                right: 0;
+                bottom: -150px;
+            }
+            span{
+                display: block;
+                max-width: 100%;
+                word-wrap: break-word;
+                font-size: rem(40);
+                word-spacing: 2px;
+                margin-bottom: rem(34);
+                margin-top: rem(25);
+                @include breakPoint(medium){
+                    font-size:rem(20)
+                }
+                @include breakPoint(mobile){
+                    font-size: rem(30);
+                    max-width: 100%;
+                }
+            }
+            p{
+                line-height: 1.8;
+                color: $VeryDarkGray;
+                max-width: 100%;
+                word-wrap: break-word;
+            }
+        }
+    }
+}

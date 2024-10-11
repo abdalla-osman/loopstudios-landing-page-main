@@ -1,0 +1,151 @@
+.creations{
+    .container{
+        display: block;
+        .head{
+            padding-top: rem(20);
+            @include flex(center,space-between,rem(1));
+            @include breakPoint(mobile){
+                @include flex(center,center,rem(1));
+            }
+            .seeall_mobile{
+               display: none;
+                @include breakPoint(mobile){
+                    display: block;
+                    margin-top: 20px;
+                    margin-bottom: 20px;
+                }
+            }
+            margin-bottom: rem(50);
+            span{
+                font-size: rem(40);
+                @include breakPoint(mobile){
+                    font-size: rem(30);
+                }
+            }
+            a{
+                @include breakPoint(mobile){
+                    display: none;
+                }
+                color: $VeryDarkGray;
+                text-transform: uppercase;
+                font-weight: 600;
+                font-size: rem(15);
+                padding: rem(5) rem(15);
+                border: 1px solid $VeryDarkGray;
+            }
+            a:hover{
+                background-color: black;
+                color: $White
+            }
+        }
+        .boxlayouet{
+            @include breakPoint(medium){
+                @include flex(center,center,rem(10));
+            }
+            @include breakPoint(small){
+                @include flex(center,center,rem(10));
+            }
+            @include flex(center,space-between,rem(10));
+            flex-wrap: wrap;
+            .box{
+                @include breakPoint(medium){
+                    width: 30%;
+                }
+                @include breakPoint(small){
+                    width: 40%;
+                }
+                @include breakPoint(mobile){
+                    width:100%;
+                    height:234px;
+                    background-size: cover;
+                    background-position: bottom;
+                }
+                width: 23%;
+                height: 600px;
+                position: relative;
+                background-size: cover;
+                background-repeat: no-repeat;
+                margin-bottom: rem(20);
+                span{
+                    color:$White;
+                    position: absolute;
+                    font-size: rem(40);
+                    bottom: 20px;
+                    font-weight: 100;
+                    margin-left: rem(20);
+                    z-index: 99;
+                }
+            }
+            .box::after{
+                content: "";
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                background-color: rgba(240, 248, 255, 0.404);
+                width: 100%;
+                height: 0%;
+                transition: height .3s ease;
+            }
+            .box:hover span{
+                color: black;
+            }
+            .box:hover::after{
+                height: 100%;
+            }
+            .box:nth-child(1){
+                @include breakPoint(mobile){
+                    background-image: url(../images/mobile/image-deep-earth.jpg);   
+                }
+                background-image: url(../images/desktop/image-deep-earth.jpg);   
+            }
+            .box:nth-child(2){
+                @include breakPoint(mobile){
+                    background-image: url(../images/mobile/image-night-arcade.jpg);   
+                }
+                background-image: url(../images/desktop/image-night-arcade.jpg);
+            }
+            .box:nth-child(3){
+                @include breakPoint(mobile){
+                    background-image: url(../images/mobile/image-soccer-team.jpg);   
+                }
+                background-image: url(../images/desktop/image-soccer-team.jpg);
+            }
+            .box:nth-child(4){
+                @include breakPoint(mobile){
+                    background-image: url(../images/mobile/image-grid.jpg);   
+                }
+                background-image: url(../images/desktop/image-grid.jpg);
+               
+            }
+            .box:nth-child(5){
+                @include breakPoint(mobile){
+                    background-image: url(../images/mobile/image-from-above.jpg);   
+                }
+                background-image: url(../images/desktop/image-from-above.jpg);
+                
+            }
+            .box:nth-child(6){
+                @include breakPoint(mobile){
+                    background-image: url(../images/mobile/image-pocket-borealis.jpg);   
+                }
+                background-image: url(../images/desktop/image-pocket-borealis.jpg);
+               
+            }
+            .box:nth-child(7){
+                @include breakPoint(mobile){
+                    background-image: url(../images/mobile/image-curiosity.jpg);   
+                }
+                background-image: url(../images/desktop/image-curiosity.jpg);
+               
+            }
+            .box:nth-child(8){
+                @include breakPoint(mobile){
+                    background-image: url(../images/mobile/image-fisheye.jpg);   
+                }
+                background-image: url(../images/desktop/image-fisheye.jpg);
+               
+            }
+        }
+    }
+}

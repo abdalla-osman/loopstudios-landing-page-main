@@ -1,0 +1,57 @@
+footer,.footer{
+    .container{
+        @include breakPoint(mobile){
+            flex-direction: column;
+        }
+    }
+    background-color: $Black;
+    .right-part{
+        h1{
+            margin-bottom: 20px;
+        }
+        ul{
+            @include breakPoint(mobile){
+                display: flex;
+                flex-direction: column
+            }
+        }
+    }
+    .left-part{
+        @include breakPoint(mobile){
+            margin-top: 20px;
+            @include flex(center,flex-start);
+        }
+        .icons{
+            @include flex(center,flex-start);
+           div{
+            position: relative;
+           }
+           div::after{
+            content: "";
+            position: absolute;
+            height:2px;
+            border-radius: 1px;
+            bottom: -10px;
+            background-color: $White;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: all .5s;
+        }
+        div:hover::after{
+            width:80%;
+        }
+        }
+        @include flex(flex-end,flex-start);
+        flex-direction: column;
+        img{
+            margin-left: rem(10);
+            position: relative;
+            cursor: pointer;   
+        }
+
+        
+        p{
+            color: $DarkGray;
+        }
+    }
+}

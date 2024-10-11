@@ -1,0 +1,34 @@
+@import './funtion';
+@import './mexin';
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    border: none;
+}
+body{
+    font-size: rem(15);
+    font-family: "Josefin Sans", sans-serif;
+    overflow-x: hidden;
+}
+span{
+    font-family: "Alata", sans-serif;
+    text-transform: uppercase;
+}
+.container{
+    width: 80%;
+    margin: auto;
+    padding:rem(45) $padding-nav;
+    @include flex(center,space-between);
+    @include breakPoint(small){
+        width: 90%;
+    }
+    @include breakPoint(large){
+        width: 90%;
+    }
+    @include breakPoint(mobile){
+        width:100%;
+    }
+}

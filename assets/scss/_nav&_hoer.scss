@@ -1,0 +1,101 @@
+nav,.nav{
+    h1{
+        position: relative;
+        z-index: 1000;
+    }
+    position:absolute;
+    z-index: 99;
+    transform: translateX(-50%);
+    left: 50%;
+    .button,button{
+        display: none;
+        background-color: transparent;
+        cursor: pointer;
+        @include breakPoint(mobile){
+            display: block;
+            position: relative;
+            z-index: 1000;
+        }
+    }
+    .ul,ul{
+        @include breakPoint(mobile){
+        position: fixed;
+        z-index: 999;
+        width:100%;
+        height: 100vh;
+        background-color: black;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: -100%;
+        padding-left:20px;
+        flex-direction: column ;
+        transition: left .4s ease;
+        @include flex(flex-start,center,20);
+        }
+    }
+    .ul.active,ul.active{
+        left: -1px;
+        right: 0;
+    }
+}
+.ul,ul{
+    @include flex(center,space-between,20);
+    
+    &{
+        a{
+            color:$White;
+            position: relative;
+            transition: all .5s;
+            @include breakPoint(mobile){
+                font-size: rem(35);
+            }
+        }
+        a::after{
+            content: "";
+            position: absolute;
+            height:2px;
+            border-radius: 1px;
+            bottom: -10px;
+            background-color: $White;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: all .5s;
+        }
+        a:hover::after{
+            width: 50%;
+        }
+    }
+}
+.hore{
+    height: 100vh;
+    width: 100%;
+    background-image: url(../images/desktop/image-hero.jpg);
+    background-size: cover;
+    &{
+        @include flex(center,center);
+        .box-title{
+            @include breakPoint(mobile){
+                width: 100%;
+            }
+            width:800px;
+            padding: rem(15);
+            border: 1px solid $White;
+            span{
+                @include breakPoint(mobile){
+                    display: block;
+                    font-size: rem(40);
+                    max-width: 100%;
+                    word-wrap: break-word;
+
+                }
+                font-size: rem(70);
+                color: $White;
+                font-weight:normal;
+                max-width: 500px;
+                text-transform: uppercase;
+
+            }
+        }
+    }
+}
